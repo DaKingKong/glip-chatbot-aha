@@ -2,10 +2,7 @@ import axios from 'axios'
 
 import app from './app'
 
-let PORT = process.env.RINGCENTRAL_CHATBOT_SERVER
-if (process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT) { 
-    PORT = process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT
-}
+const PORT = process.env.PORT || process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT;
 
 app.listen( PORT, () => {
   console.log(`Server is running on port ${PORT}`)

@@ -6,7 +6,7 @@ Adaptive card can be designed with [Adaptive Cards Designer](https://adaptivecar
 
 ## Deploy to Heroku
 
-Click below button for your first time deployment.
+Click below button for your first time deployment. (Note: Heroku Button is to be used for the first time setup. Further changes are to be made on Heroku app web page)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
