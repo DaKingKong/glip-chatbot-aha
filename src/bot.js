@@ -53,7 +53,7 @@ const handleMessage4Bot = async event => {
 	    let server = process.env.RINGCENTRAL_CHATBOT_SERVER
 	    let hookUrl = server + `/aha/webhook?groupId=${group.id}&botId=${bot.id}`
 	    let resp = aha.product.get( productCode, function( err, data, response ) {
-		bot.sendMessage(group.id, { text: `To receive updates in this Team from Aha:\n1. [Create a new Activity Webhook in Aha](https://ringcentral.aha.io/settings/projects/${found}/integrations/new)\n2. In the Hook URL field, enter: ${hookUrl}\n3. Select the activities you would like to subscribe to.` })
+		bot.sendMessage(group.id, { text: `To receive updates in this Team from Aha:\n1. [Create a new Activity Webhook in Aha](https://${process.env.AHA_SUBDOMAIN}.aha.io/settings/projects/${productCode}/integrations/new)\n2. In the Hook URL field, enter: ${hookUrl}\n3. Select the activities you would like to subscribe to and enable the webhook.` })
 	    });
 	} else {
 	    await bot.sendMessage(group.id, { text: `It does not appear you have a current connection to Aha in this team.` })

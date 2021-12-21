@@ -3,8 +3,8 @@ import axios from 'axios'
 import app from './app'
 
 let PORT = process.env.RINGCENTRAL_CHATBOT_SERVER
-if (process.env.PORT) { 
-    PORT = process.env.PORT
+if (process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT) { 
+    PORT = process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT
 }
 
 app.listen( PORT, () => {
