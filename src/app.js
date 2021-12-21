@@ -1,6 +1,5 @@
 import createApp from 'ringcentral-chatbot/dist/apps'
 import { Service, Bot } from 'ringcentral-chatbot/dist/models'
-import timeout from 'connect-timeout'
 
 import { handle } from './bot'
 import { ahaOAuth } from './aha'
@@ -12,13 +11,6 @@ import ahaCardTemplate from './adaptive-cards/ahaCard.json'
 const app = createApp(handle)
 const entities = new AllHtmlEntities()
 const turnDown = new turnDownService()
-
-app.use(timeout(120000));
-app.use(haltOnTimedout);
-
-function haltOnTimedout(req, res, next){
-   if (!req.timedout) next();
-}
 
 app.get('/aha/oauth', async (req, res) => {
 	const { code, state } = req.query

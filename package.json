@@ -8,7 +8,7 @@
 		"build": "rm -rf dist && babel src --out-dir dist --source-maps --copy-files",
 		"deploy": "yarn test && yarn build && sls deploy",
 		"test": "jest",
-		"heroku-postbuild": "npm run build"
+		"heroku-postbuild": "npm run build&& node -r @babel/register -r dotenv/config dist/setupDatabase.js"
 	},
 	"dependencies": {
 		"adaptive-expressions": "^4.15.0",
@@ -16,10 +16,10 @@
 		"aha-io": "byrnereese/node-ahaio#master",
 		"aha-io-oauth": "0.0.3",
 		"axios": "^0.18.0",
-		"connect-timeout": "^1.9.0",
 		"html-entities": "^1.2.1",
 		"pg": "^7.6.1",
 		"ringcentral-chatbot": "1.9.0",
+		"sequelize": "^6.12.0",
 		"serverless-http": "^1.8.0",
 		"sqlite3": "^5.0.2",
 		"turndown": "^5.0.3"
