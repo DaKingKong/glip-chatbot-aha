@@ -11,11 +11,11 @@
     "env": {
       "RINGCENTRAL_SERVER": {
         "description": "RingCentral platform server url",
-        "value": "platform.ringcentral.com"
+        "value": "https://platform.devtest.ringcentral.com"
       },
       "RINGCENTRAL_CHATBOT_DATABASE_CONNECTION_URI": {
-        "description": "Database uri. Leave this empty for the 1st deployment and copy DATABASE_URL value to here right after.",
-        "value": ""
+        "description": "Database uri. Leave this default for the 1st deployment and copy DATABASE_URL value to here right after.",
+        "value": "database_uri"
       },
       "RINGCENTRAL_CHATBOT_CLIENT_ID": {
         "description": "Client Id for your bot, from App Settings on RingCentral Developer Portal",
@@ -26,8 +26,8 @@
         "value": ""
       },
       "RINGCENTRAL_CHATBOT_SERVER": {
-        "description": "Bot server url. Leave this empty for the 1st deployment and fill in right after",
-        "value": "client_id"
+        "description": "Bot server url. Leave this default for the 1st deployment and fill in right after",
+        "value": "bot_server"
       },
       "RINGCENTRAL_CHATBOT_ADMIN_USERNAME": {
         "description": "Bot admin username",
@@ -51,7 +51,8 @@
       },
       "IM_SHARED_SECRET": {
         "description": "RingCentral app interactive message shared secret",
-        "value": "shared_secret"
+        "value": "shared_secret",
+        "required": false
       }
     }
   }
