@@ -4,14 +4,16 @@ import app from './app'
 
 const PORT = process.env.PORT || process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT;
 
-app.listen( PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
 })
 
 setInterval(() => {
-  axios.put(`${process.env.RINGCENTRAL_CHATBOT_SERVER}/admin/maintain`, undefined, { auth: {
-    username: process.env.RINGCENTRAL_CHATBOT_ADMIN_USERNAME,
-    password: process.env.RINGCENTRAL_CHATBOT_ADMIN_PASSWORD
-  } })
+  axios.put(`${process.env.RINGCENTRAL_CHATBOT_SERVER}/admin/maintain`, undefined, {
+    auth: {
+      username: process.env.RINGCENTRAL_CHATBOT_ADMIN_USERNAME,
+      password: process.env.RINGCENTRAL_CHATBOT_ADMIN_PASSWORD
+    }
+  })
   axios.put(`${process.env.RINGCENTRAL_CHATBOT_SERVER}/ringcentral/refresh-tokens`)
 }, 86400000)
