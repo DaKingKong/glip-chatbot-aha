@@ -50,8 +50,8 @@
         "value": ""
       },
       "IM_SHARED_SECRET": {
-        "description": "RingCentral app interactive message shared secret",
-        "value": "shared_secret",
+        "description": "(ignore it if your are not using Interactive Messages feature)RingCentral app interactive message shared secret",
+        "value": "",
         "required": false
       }
     }
